@@ -25,6 +25,8 @@ const PokemonList = () => {
 
     return pokemonsList;
   };
+  //renderize pokeball
+  if (!pokemons.length) return <Pokeball />
 
   return (
     <>
