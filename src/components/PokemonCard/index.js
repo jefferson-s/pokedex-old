@@ -11,6 +11,8 @@ import {
   CardImg,
   CardDetails,
   CardId,
+  Container,
+  Menu
 } from "./styles";
 
 const PokemonCard = ({ pokemon }) => {
@@ -21,7 +23,9 @@ const PokemonCard = ({ pokemon }) => {
   );
 
   return (
-    <StyledLink to={`pokemon/${pokemon.id}`}>
+
+    <Container>
+       <StyledLink to={`pokemon/${pokemon.id}`}>
       <Card className={pokemonType[0]}>
         <CardId className={pokemonType[0]}># {pokemon.id}</CardId>
         <CardImg
@@ -33,6 +37,16 @@ const PokemonCard = ({ pokemon }) => {
         <CardDetails>{pokemonType.join(" / ")}</CardDetails>
       </Card>
     </StyledLink>
+    <Menu>
+      <img 
+        src='/icons/not_caught.png'
+      />
+      <img 
+        src='/icons/not_favorite.png'
+      />
+    </Menu>
+    </Container>
+   
   );
 };
 
