@@ -16,6 +16,13 @@ export const PokemonProvider = props =>{
         }
         setPokemons([...pokemons]);
     };
+    //function loading pokemon
+    const updatePokemon = pokemon => {
+        const index = pokemons.findIndex(({ id }) => id === pokemon.id)
+        pokemons[index] = pokemon
+    
+        setPokemons([...pokemons]);
+      }
 
     //function for fetch pokemons
     const fetchPokemons = async () =>{
@@ -28,7 +35,7 @@ export const PokemonProvider = props =>{
     }, []);
 
     return (
-        <PokemonContext.Provider value= {{ pokemons }}>
+        <PokemonContext.Provider value= {{ pokemons, updatePokemon }}>
             {props.children}
         </PokemonContext.Provider>   
     )
