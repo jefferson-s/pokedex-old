@@ -19,6 +19,7 @@ function App() {
       <ThemeContext.Consumer>
         {({theme, toggleTheme})=>
           <div style={{ backgroundColor: theme }}>
+          <button onClick={toggleTheme} style={{ backgroundColor: 'red', height: '100px', width: '100px', borderRadius: '50%', border: '5px solid #fff' }} />
           <Route path="/" exact component={Pokedex} />
           <Route path="/pokedex" exact component={Pokedex} />
           <Route path="/pokemon/:pokemonIndex" exact component={Pokemon} />
